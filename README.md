@@ -18,12 +18,6 @@ Reproducible Monte Carlo scenario analysis of asymmetric FX payoff and tail risk
 
 Evidence-controlled listed-company research workflow with a runnable bear/base/bull SOTP valuation slice, explicit cutoffs, reproducible decimal arithmetic, and machine-verifiable result packets.
 
-### [EvidenceFinder Synthetic Demo](https://github.com/IanHu0508/evidencefinder-synthetic-demo)
-
-Backend-free, fully synthetic demonstration of a provenance-first evidence workflow: search, inspect source context, select evidence, save, and reopen.
-
-[Open the live demo](https://ianhu0508.github.io/evidencefinder-synthetic-demo/)
-
 ## Additional project
 
 - [FinOps Ledger](https://github.com/IanHu0508/finops-ledger-demo) — a privacy-safe Next.js and TypeScript prototype for auditable service-business finance events.
