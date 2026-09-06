@@ -10,6 +10,16 @@ MSc Financial Technology student at Nanyang Technological University (NTU).
 
 ## Selected engineering work
 
+### [FinResearchOps](https://github.com/IanHu0508/FinResearchOps)
+
+**Python · Financial evidence checks · LangGraph · TradingAgents integration**
+
+An evidence-led financial research workflow that checks annual earnings and operating cash flow before generating a Chinese research draft. Deterministic source checks and Decimal calculations support bounded disclosure lookups; final synthesis reads audited evidence without initial opinion text, and prior theses are compared after the new judgment is saved.
+
+[Research workflow](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/tradingagents-research.md) · [Financial checks](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/cashflow-investigation.md) · [Offline tests](https://github.com/IanHu0508/FinResearchOps/tree/main/tests) · [Status and limits](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/status.md)
+
+*Public scope: code, synthetic fixtures and reproducible checks. Research drafts require human financial review; bias elimination and investment performance are not established.*
+
 ### [Company Research Automation](https://github.com/IanHu0508/company-research-automation)
 
 **Python · Decimal · JSON Schema**
