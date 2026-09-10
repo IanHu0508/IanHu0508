@@ -12,11 +12,11 @@ MSc Financial Technology student at Nanyang Technological University (NTU).
 
 ### [FinResearchOps](https://github.com/IanHu0508/FinResearchOps)
 
-**Python · Financial evidence checks · LangGraph · TradingAgents integration**
+**Python · LangGraph · TradingAgents · Research workflow**
 
-An evidence-led financial research workflow that checks annual earnings and operating cash flow before generating a Chinese research draft. Deterministic source checks and Decimal calculations support bounded disclosure lookups; final synthesis reads audited evidence without initial opinion text, and prior theses are compared after the new judgment is saved.
+A financial-research workflow built on the native TradingAgents chain. Independent first drafts and itemized counterevidence revisions feed a fresh final judgment without prior ratings or trader-authored thresholds. An optional data-review Agent checks the saved report; deterministic filing checks remain a separate capability.
 
-[Research workflow](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/tradingagents-research.md) · [Financial checks](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/cashflow-investigation.md) · [Offline tests](https://github.com/IanHu0508/FinResearchOps/tree/main/tests) · [Status and limits](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/status.md)
+[Research workflow](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/thesis-research.md) · [Financial checks](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/cashflow-investigation.md) · [Integration tests](https://github.com/IanHu0508/FinResearchOps/tree/main/integration_tests) · [Status and limits](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/status.md)
 
 *Public scope: code, synthetic fixtures and reproducible checks. Research drafts require human financial review; bias elimination and investment performance are not established.*
 
