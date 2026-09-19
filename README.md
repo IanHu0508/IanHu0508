@@ -4,7 +4,7 @@
 
 MSc Financial Technology student at Nanyang Technological University (NTU).
 
-I build auditable financial research and quantitative systems where evidence, assumptions, and calculations can be inspected independently. My current work spans LLM research workflows, source-backed security research, quantitative risk and derivatives, and production data systems.
+I build auditable financial research and quantitative systems where evidence, assumptions, and calculations can be inspected independently. My current work spans LLM research workflows, source-backed security research, quantitative risk and derivatives, reproducible volatility modeling, and production data systems.
 
 [FinResearchOps](https://github.com/IanHu0508/FinResearchOps) · [SOTP valuation engine](https://github.com/IanHu0508/company-research-automation) · [KODA / TRF risk case study](https://github.com/IanHu0508/koda-trf-risk-case-study)
 
@@ -14,7 +14,7 @@ I build auditable financial research and quantitative systems where evidence, as
 | --- | --- | --- |
 | Financial AI | **Active · public flagship** | **FinResearchOps** — native TradingAgents research workflow with independent drafts, counterevidence revision, a fresh final assessment, and separate deterministic filing checks. The lightweight research slice is implemented; reliability and bias-reduction validation remain ongoing. |
 | Security research & valuation | **Active · private** | Source-backed research foundation with canonical `ResearchPacket` contracts and evidence provenance. The foundation is implemented; the valuation path is being reviewed before broader publication. |
-| Quant / ML | **Active · private** | JPM chooser-option study. The reproducible 2018–2024 market, rates, volatility, and sentiment dataset is in place; analytic/BSM chooser pricing, Monte Carlo validation, and ML volatility modeling are the next implementation layer. |
+| Quant / ML | **Active · private** | JPM chooser-option study. A reproducible 2018–2024 market, rates, volatility, and sentiment dataset now supports analytic/BSM pricing, Monte Carlo validation, RV20 baselines, annual walk-forward evaluation, and multi-seed A/B/C ML experiments. |
 | Research agents | **Active · private** | Provenance-first, source-constrained multimodal research Agent with traceable citations, replayable run records, and explicit human-review boundaries. |
 | Quant research platform | **Stable · private** | A-share ETF/factor research platform with market-microstructure constraints, fee-aware T+1 backtests, walk-forward evaluation, and CSCV/PBO overfitting controls. |
 | Production engineering | **Maintained · private** | Production Next.js/PostgreSQL operations system with explicit data-integrity, backup, credential, and deployment controls. |
@@ -51,6 +51,24 @@ An earnings-based SOTP valuation engine with explicit bear/base/bull assumptions
 A reproducible 100,000-path FX scenario study comparing a stylized structured payoff with a forward on the same simulated paths. It separates path generation, payoff mechanics, tail-risk metrics, and sensitivity analysis, with fixed-seed artifacts and CI.
 
 [Model](https://github.com/IanHu0508/koda-trf-risk-case-study/blob/main/src/koda_trf/model.py) · [Tests](https://github.com/IanHu0508/koda-trf-risk-case-study/blob/main/tests/test_model.py) · [Results](https://github.com/IanHu0508/koda-trf-risk-case-study/tree/main/artifacts) · [CI](https://github.com/IanHu0508/koda-trf-risk-case-study/actions/workflows/ci.yml)
+
+## Current private quantitative study
+
+### JPM chooser-option volatility research
+
+An evidence-first study of a simple European chooser option on JPM over
+2018–2024. The pipeline keeps provider-native snapshots, builds market and
+sentiment features, validates analytic/BSM pricing with full-path Monte Carlo,
+and forecasts annualized forward RV20 with historical RV20, EWMA, Ridge, Random
+Forest, XGBoost, and LSTM.
+
+The ML comparison keeps three feature groups on matching annual expanding-window
+folds: A uses market features, B adds news activity, and C adds sentiment
+content. Five-seed reference results and a separate twenty-seed batch report
+MAE, RMSE, signed bias, seed dispersion, and B−A/C−A/C−B differences. EWMA
+remains the strongest pooled benchmark; ML effects vary by model and volatility
+regime. The 2024 test remains held out, no chooser-market-price validation is
+claimed, and no trading edge is asserted.
 
 ## Additional public work
 
