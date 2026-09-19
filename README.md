@@ -34,7 +34,7 @@ The first real A-share panel also surfaced a historical ticker-identity problem 
 
 ### JPM Volatility & Chooser Option Research
 
-**Python · Time-Series ML · XGBoost · LSTM · Derivatives**
+**Python · scikit-learn · XGBoost · PyTorch · Derivatives**
 
 A private 2018–2024 JPM study covering volatility forecasting and chooser-option pricing.
 
@@ -66,6 +66,6 @@ Synthetic finance event ledger built with Next.js, TypeScript, Prisma, and Postg
 
 ## Technical stack
 
-**Quant / ML:** Python · NumPy · XGBoost · LSTM · Monte Carlo  
+**Quant / ML:** Python · NumPy · scikit-learn · XGBoost · PyTorch · Monte Carlo  
 **Research / AI:** LangGraph · LLM workflows  
 **Data / Engineering:** SQL · PostgreSQL · TypeScript
