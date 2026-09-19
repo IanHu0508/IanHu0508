@@ -64,6 +64,8 @@ Python SOTP valuation model with bear/base/bull scenarios, valuation-date contro
 
 Synthetic finance event ledger built with Next.js, TypeScript, Prisma, and PostgreSQL, with transaction-level accounting and audit records.
 
-## Tools
+## Technical stack
 
-**Python · SQL · TypeScript · NumPy · XGBoost · LangGraph · PostgreSQL · Git · GitHub Actions**
+**Quant / ML:** Python · NumPy · XGBoost · LSTM · Monte Carlo  
+**Research / AI:** LangGraph · LLM workflows  
+**Data / Engineering:** SQL · PostgreSQL · TypeScript
