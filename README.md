@@ -34,6 +34,8 @@ A 100,000-path Monte Carlo study comparing a stylized FX target-redemption payof
 
 [FinOps Ledger](https://github.com/IanHu0508/finops-ledger-demo) — synthetic financial-event ledger separating cash receipts, recognized revenue, contract liabilities and receivables.
 
+**Local Source Research Agent — private** — local Qwen3.5-9B workflow with allowlisted document/image tools, replayable source windows and bounded model/tool budgets.
+
 [Scenario Valuation](https://github.com/IanHu0508/company-research-automation) — runnable synthetic SOTP model with explicit scenario assumptions and reproducible outputs.
 
 ## Tools
