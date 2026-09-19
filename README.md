@@ -4,23 +4,23 @@
 
 MSc Financial Technology student at Nanyang Technological University (NTU), with an undergraduate background in Financial Engineering. Quantitative Strategy Intern at Morgan Stanley Securities (China).
 
-I use Python to study volatility, derivative payoffs and financial research workflows.
+I use Python to study volatility, derivative payoffs and financial research systems.
 
 ## Selected work
 
-### JPM Volatility & Chooser Option Research — private
+### JPM Volatility & Chooser Option Research
 
-A 2018–2024 study of forward realized volatility and simple European chooser-option pricing.
+A forward-RV20 forecasting and simple-European-chooser study using matched 7/10/15-year histories.
 
-- Compares historical RV and EWMA with Ridge, Random Forest, XGBoost and LSTM under annual expanding-window evaluation.
-- Separates market-only, news-activity and sentiment features, with repeated-seed checks for stochastic models; 2024 remains held out.
-- Implements analytical and Monte Carlo chooser pricing separately from the ML forecasting work.
+- Compared EWMA with Ridge, Random Forest, XGBoost and LSTM across market-only, news-activity and sentiment feature sets under expanding-window evaluation and repeated-seed experiments.
+- Completed **2,196 development fits and 549 locked 2024 test fits**. The predeclared 15-year Ridge market-only candidate reduced MAE/RMSE versus EWMA by **10.17% / 10.01%**. The lowest observed test means came from 10-year RF C, while its MAE gain over market-only RF A was only about **0.21%**.
+- Implemented analytical and two-stage risk-neutral Monte Carlo pricing for a simple European chooser option, including decision-boundary, sensitivity, convergence and estimator-comparison studies.
 
 ### [FinResearchOps](https://github.com/IanHu0508/FinResearchOps)
 
-A TradingAgents-based research workflow with independent drafts, explicit counterevidence revisions and financial calculations performed in Python. Report figures are bound to recalculated results rather than copied model numbers.
+A Python / LangGraph financial research agent with independent long/short drafts, structured counterevidence revisions and financial calculations performed outside the language model. Forecast assumptions are stored in structured contracts, recalculated in Python and bound to the final report.
 
-A separate A-share module defines 60-session inputs, 20-session forward-return targets, purged splits and Rank IC evaluation. The first real-data run was withheld after a ticker-identity issue changed universe membership and labels.
+A separate A-share quant module defines 60-session inputs, 20-session forward-return targets, purged splits and Rank IC evaluation. A real-data run was invalidated after a historical ticker-identity issue changed universe membership and labels.
 
 [Research workflow](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/thesis-research.md) ·
 [Quant module](https://github.com/IanHu0508/FinResearchOps/blob/main/quant/README.md) ·
