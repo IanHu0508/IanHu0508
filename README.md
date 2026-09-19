@@ -1,82 +1,69 @@
 # Ian Hu
 
-**Financial AI · Quantitative Research · Research Engineering**
+**Quantitative Research · Financial Machine Learning · Research Engineering**
 
-MSc Financial Technology student at Nanyang Technological University (NTU).
+MSc Financial Technology student at Nanyang Technological University (NTU) and Quantitative Research Intern at Morgan Stanley.
 
-I build auditable financial research and quantitative systems where evidence, assumptions, and calculations can be inspected independently. My current work spans LLM research workflows, source-backed security research, quantitative risk and derivatives, reproducible volatility modeling, and production data systems.
+Current work centers on volatility modeling, derivatives, financial ML, and LLM-based research workflows. Most projects are built in Python and focus on turning a financial question into a clean dataset, a testable model, and an evaluation that can be reproduced.
 
-[FinResearchOps](https://github.com/IanHu0508/FinResearchOps) · [SOTP valuation engine](https://github.com/IanHu0508/company-research-automation) · [KODA / TRF risk case study](https://github.com/IanHu0508/koda-trf-risk-case-study)
+[FinResearchOps](https://github.com/IanHu0508/FinResearchOps) · [KODA / TRF risk case study](https://github.com/IanHu0508/koda-trf-risk-case-study) · [SOTP valuation engine](https://github.com/IanHu0508/company-research-automation)
 
 ## Current focus
 
-| Workstream | Status | Current focus |
-| --- | --- | --- |
-| Financial AI | **Active · public flagship** | **FinResearchOps** — native TradingAgents research workflow with independent drafts, counterevidence revision, a fresh final assessment, and separate deterministic filing checks. The lightweight research slice is implemented; reliability and bias-reduction validation remain ongoing. |
-| Security research & valuation | **Active · private** | Source-backed research foundation with canonical `ResearchPacket` contracts and evidence provenance. The foundation is implemented; the valuation path is being reviewed before broader publication. |
-| Quant / ML | **Active · private** | JPM chooser-option study. A reproducible 2018–2024 market, rates, volatility, and sentiment dataset now supports analytic/BSM pricing, Monte Carlo validation, RV20 baselines, annual walk-forward evaluation, and multi-seed A/B/C ML experiments. |
-| Research agents | **Active · private** | Provenance-first, source-constrained multimodal research Agent with traceable citations, replayable run records, and explicit human-review boundaries. |
-| Quant research platform | **Stable · private** | A-share ETF/factor research platform with market-microstructure constraints, fee-aware T+1 backtests, walk-forward evaluation, and CSCV/PBO overfitting controls. |
-| Production engineering | **Maintained · private** | Production Next.js/PostgreSQL operations system with explicit data-integrity, backup, credential, and deployment controls. |
+| Area | Current work |
+| --- | --- |
+| Quantitative Research | JPM volatility forecasting and chooser-option research using 2018–2024 market, rates, VIX, and timestamp-aligned news data. Current experiments compare RV20 forecasts from EWMA, Ridge, Random Forest, XGBoost, and LSTM on annual walk-forward splits, with the 2024 period kept held out. |
+| Financial AI | **FinResearchOps** combines an LLM-based investment-research workflow with a separate A-share quantitative research module. Current quant work is focused on market-data quality, universe construction, 20-session cross-sectional targets, and walk-forward evaluation. |
+| Derivatives & Risk | Option pricing and structured-payoff research using analytic pricing, Monte Carlo validation, sensitivity analysis, and tail-risk diagnostics. |
 
-**Core stack:** Python · TypeScript · LangGraph · Next.js · PostgreSQL · Prisma · NumPy · pytest · GitHub Actions
+## Selected work
 
-## Selected public engineering work
+### [FinResearchOps](https://github.com/IanHu0508/FinResearchOps) — Financial Research & Quant Infrastructure
 
-### [FinResearchOps](https://github.com/IanHu0508/FinResearchOps) — auditable financial research workflow
+**Python · LangGraph · TradingAgents · Quantitative Research**
 
-**Flagship · Active**  
-**Python · LangGraph · TradingAgents · structured research workflows**
+FinResearchOps combines a modified TradingAgents research workflow with a separate quantitative research module.
 
-Built on the native TradingAgents chain. Independent first drafts are kept separate, each side responds to itemized counterevidence, and the final manager receives original sources plus revised arguments without upstream ratings or trader-authored thresholds. An optional report-review Agent is advisory only; deterministic filing checks remain a separate capability.
+On the research side, models work from source material, opposing arguments, and explicit revisions before a final assessment is produced. On the quant side, the project defines 60-session market inputs, 20-session forward-return targets, purged splits, Rank IC evaluation, and versioned research signals.
 
-[Research workflow](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/thesis-research.md) · [Financial checks](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/cashflow-investigation.md) · [Integration tests](https://github.com/IanHu0508/FinResearchOps/tree/main/integration_tests) · [Status and limits](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/status.md)
+The first real A-share panel also surfaced a historical ticker-identity problem that changed universe membership and labels. Those results were invalidated and retained for audit rather than presented as investment performance.
 
-*The public implementation is reproducible and testable, but no claim is made that it removes model bias, improves investment returns, or replaces human financial review.*
+[Research workflow](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/thesis-research.md) ·
+[Quant research](https://github.com/IanHu0508/FinResearchOps/blob/main/quant/README.md) ·
+[Current status](https://github.com/IanHu0508/FinResearchOps/blob/main/docs/status.md)
 
-### [Company Research Automation](https://github.com/IanHu0508/company-research-automation) — explicit SOTP valuation
+### JPM Volatility & Chooser Option Research
 
-**Stable portfolio**  
-**Python · Decimal · JSON Schema · canonical JSON**
+**Python · Time-Series ML · XGBoost · LSTM · Derivatives**
 
-An earnings-based SOTP valuation engine with explicit bear/base/bull assumptions. Decimal-string inputs avoid silent float conversion, source dates enforce the valuation cutoff, and canonical JSON plus SHA-256 support result-packet integrity checks.
+A private 2018–2024 JPM study covering volatility forecasting and chooser-option pricing.
 
-[Model](https://github.com/IanHu0508/company-research-automation/blob/main/src/valuation_engine/model.py) · [Packet validation](https://github.com/IanHu0508/company-research-automation/blob/main/src/valuation_engine/packet.py) · [Tests](https://github.com/IanHu0508/company-research-automation/tree/main/tests) · [Runnable example](https://github.com/IanHu0508/company-research-automation/blob/main/examples/run_example.py)
+The pipeline combines market data, interest rates, VIX, and timestamp-aligned news sentiment. Forward RV20 is compared across EWMA, Ridge, Random Forest, XGBoost, and LSTM using annual expanding-window evaluation, with separate market-only, news-activity, and sentiment feature groups.
 
-### [KODA / TRF Risk Case Study](https://github.com/IanHu0508/koda-trf-risk-case-study) — path-dependent risk modeling
+The 2024 period remains held out while model stability and the incremental contribution of news and sentiment are still being evaluated.
 
-**Stable portfolio**  
-**Python · NumPy · Monte Carlo · pytest · GitHub Actions**
+### [KODA / TRF Risk Case Study](https://github.com/IanHu0508/koda-trf-risk-case-study)
 
-A reproducible 100,000-path FX scenario study comparing a stylized structured payoff with a forward on the same simulated paths. It separates path generation, payoff mechanics, tail-risk metrics, and sensitivity analysis, with fixed-seed artifacts and CI.
+**Python · NumPy · Monte Carlo · Derivatives**
 
-[Model](https://github.com/IanHu0508/koda-trf-risk-case-study/blob/main/src/koda_trf/model.py) · [Tests](https://github.com/IanHu0508/koda-trf-risk-case-study/blob/main/tests/test_model.py) · [Results](https://github.com/IanHu0508/koda-trf-risk-case-study/tree/main/artifacts) · [CI](https://github.com/IanHu0508/koda-trf-risk-case-study/actions/workflows/ci.yml)
+A 100,000-path Monte Carlo study of a path-dependent FX structured payoff.
 
-## Current private quantitative study
+The project compares the structured payoff with a conventional forward under the same simulated scenarios and examines downside risk, tail behavior, and parameter sensitivity.
 
-### JPM chooser-option volatility research
+[Model](https://github.com/IanHu0508/koda-trf-risk-case-study/blob/main/src/koda_trf/model.py) ·
+[Tests](https://github.com/IanHu0508/koda-trf-risk-case-study/tree/main/tests) ·
+[Results](https://github.com/IanHu0508/koda-trf-risk-case-study/tree/main/artifacts)
 
-An evidence-first study of a simple European chooser option on JPM over
-2018–2024. The pipeline keeps provider-native snapshots, builds market and
-sentiment features, validates analytic/BSM pricing with full-path Monte Carlo,
-and forecasts annualized forward RV20 with historical RV20, EWMA, Ridge, Random
-Forest, XGBoost, and LSTM.
+## Other projects
 
-The ML comparison keeps three feature groups on matching annual expanding-window
-folds: A uses market features, B adds news activity, and C adds sentiment
-content. Five-seed reference results and a separate twenty-seed batch report
-MAE, RMSE, signed bias, seed dispersion, and B−A/C−A/C−B differences. EWMA
-remains the strongest pooled benchmark; ML effects vary by model and volatility
-regime. The 2024 test remains held out, no chooser-market-price validation is
-claimed, and no trading edge is asserted.
+### [Company Research Automation](https://github.com/IanHu0508/company-research-automation)
 
-## Additional public work
+Python SOTP valuation model with bear/base/bull scenarios, valuation-date controls, and reproducible output packets.
 
-[FinOps Ledger](https://github.com/IanHu0508/finops-ledger-demo) is a synthetic, audit-oriented finance event ledger built with Next.js, TypeScript, Prisma, and PostgreSQL. It separates cash movement, recognized revenue, contract liabilities, and receivables, and keeps database writes and audit records inside explicit transaction boundaries.
+### [FinOps Ledger](https://github.com/IanHu0508/finops-ledger-demo)
 
-## Engineering principles
+Synthetic finance event ledger built with Next.js, TypeScript, Prisma, and PostgreSQL, with transaction-level accounting and audit records.
 
-- **Evidence before conclusions.** Source context, provenance, and information cutoffs are part of the system contract.
-- **Deterministic financial logic where possible.** Calculations, assumptions, validation rules, and accounting transitions should remain independently testable.
-- **Failure modes are first-class.** Future-dated evidence, malformed inputs, duplicated scenarios, provider failures, and asymmetric payoffs deserve dedicated tests.
-- **Consequential outputs stay reviewable.** Retrieval, interpretation, calculation, and final business or investment judgment should not collapse into one opaque model call.
+## Tools
+
+**Python · SQL · TypeScript · NumPy · XGBoost · LangGraph · PostgreSQL · Git · GitHub Actions**
